@@ -3,7 +3,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import openai
 
 # Assuming OPENAI_API_KEY is set as an environment variable
-openai.api_key = "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"
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def extract_video_id(url):
     """Extract the video ID from a YouTube URL."""
