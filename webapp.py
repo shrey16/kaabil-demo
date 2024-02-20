@@ -31,8 +31,8 @@ def provide_feedback(question, answer, transcript):
     )
     return response.choices[0].message.content.strip()
 
-st.title('YouTube Video and Question Generator')
-
+st.title('Kaabil Demo: AI-Powered Video Learning Platform')
+st.text('This is a demo of a video learning platform that uses AI to generate questions and provide feedback on user answers. Enter a YouTube video URL and the current playback time to get started.')
 video_url = st.text_input('Enter YouTube Video URL:', '')
 
 if video_url:
