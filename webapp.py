@@ -19,7 +19,7 @@ def generate_question(text):
     response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant. Create a question based on the provided video transcript text."},
+            {"role": "system", "content": "You are a helpful assistant. Create a question to test user's understanding of concepts discussed in the video."},
             {"role": "user", "content": text}
         ]
     )
