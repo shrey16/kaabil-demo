@@ -44,7 +44,8 @@ if video_url:
     video_id = extract_video_id(video_url)
 
     # Embed YouTube video using streamlit_player with dynamic start time
-    current_time = st.number_input('Enter current playback time in seconds:', min_value=0, value=0)
+    current_time_str = st.text_input('Enter current playback time (minutes.seconds). For example - 4.29 or 7.11:', value='0.00')
+    current_time = sum(float(x) * 60 ** i for i, x in enumerate(reversed(current_time_str.split('.'))))
     modified_video_url = f"https://www.youtube.com/embed/{video_id}?start={current_time}"
     from streamlit_player import st_player
     st_player(modified_video_url)
