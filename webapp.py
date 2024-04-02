@@ -1,6 +1,7 @@
 import streamlit as st
 from youtube_transcript_api import YouTubeTranscriptApi
 import openai
+import re
 
 # Assuming OPENAI_API_KEY is set as an environment variable
 openai.api_key = st.secrets["OPENAI_API_KEY"]
