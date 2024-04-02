@@ -7,7 +7,11 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def extract_video_id(url):
     """Extract the video ID from a YouTube URL."""
-    return url.split('=')[-1]
+    pattern = r'(?:v=|\/)([0-9A-Za-z_-]{11}).*'
+    match = re.search(pattern, url)
+    if match:
+        return match.group(1)
+    return None
 
 def generate_question(text):
     """Generate a question based on the provided text using OpenAI's Chat Completions API."""
